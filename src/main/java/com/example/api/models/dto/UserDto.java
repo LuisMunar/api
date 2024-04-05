@@ -3,20 +3,30 @@ package com.example.api.models.dto;
 import com.example.api.models.User;
 
 public class UserDto {
-    private User user;
+    private String name;
+    private String email;
 
     public UserDto() {
     }
 
     public UserDto(User user) {
-      this.user = user;
+      this.name = user.getName();
+      this.email = user.getEmail();
     }
 
-    public User getUser() {
-      return user;
+    public String getName() {
+      return name;
     }
 
-    public void setUser(User user) {
-      this.user = user;
+    public void setName(String name) {
+      this.name = name;
+    }
+
+    public String getEmail() {
+      return email;
+    }
+
+    public void setEmail(String email) {
+      this.email = email;
     }
 }
