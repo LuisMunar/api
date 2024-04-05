@@ -1,6 +1,7 @@
 package com.example.api.controllers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,5 +27,14 @@ public class UserController {
     User user = new User("John Doe", "john.doe@mail.com");
     UserDto userDto = new UserDto(user);
     return userDto;
+  }
+
+  @GetMapping({"/users"})
+  public List<User> getUsers() {
+    List<User> users = List.of(
+      new User("John Doe", "john.doe@mail.com"),
+      new User("Rico Lui", "rico.lui@mail.com")
+    );
+    return users;
   }
 }
